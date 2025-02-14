@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .boton {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #contenedor {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ale, ¿me compras todos los álbumes de Taylor Swift?</h2>
+    
+    <div id="contenedor">
+        <button class="boton" id="si">Sí</button>
+        <button class="boton" id="no">No</button>
+    </div>
+
+    <script>
+        const botonNo = document.getElementById("no");
+
+        botonNo.addEventListener("mouseover", function() {
+            const anchoVentana = window.innerWidth - 100;
+            const altoVentana = window.innerHeight - 50;
+            const nuevaX = Math.random() * anchoVentana;
+            const nuevaY = Math.random() * altoVentana;
+            
+            botonNo.style.left = nuevaX + "px";
+            botonNo.style.top = nuevaY + "px";
+        });
+
+        document.getElementById("si").addEventListener("click", function() {
+            alert("¡Gracias Ale! Sabía que dirías que sí, te quiero mucho.");
+        });
+    </script>
+
+</body>
+</html>
